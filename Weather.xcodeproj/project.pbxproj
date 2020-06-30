@@ -56,15 +56,63 @@
 		9FC9BE6324AB180C002E5ED3 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */,
-				9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */,
-				9FC9BE6824AB180C002E5ED3 /* ViewController.swift */,
-				9FC9BE6A24AB180C002E5ED3 /* Main.storyboard */,
-				9FC9BE6D24AB1810002E5ED3 /* Assets.xcassets */,
-				9FC9BE6F24AB1810002E5ED3 /* LaunchScreen.storyboard */,
-				9FC9BE7224AB1810002E5ED3 /* Info.plist */,
+				9FC9BE7D24AB1886002E5ED3 /* AppFiles */,
+				9FC9BE7924AB184D002E5ED3 /* Models */,
+				9FC9BE7824AB184B002E5ED3 /* Storyboards */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		9FC9BE7824AB184B002E5ED3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9FC9BE6A24AB180C002E5ED3 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9FC9BE7924AB184D002E5ED3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FC9BE6824AB180C002E5ED3 /* ViewController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9FC9BE7A24AB1851002E5ED3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9FC9BE7D24AB1886002E5ED3 /* AppFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9FC9BE7F24AB1AB2002E5ED3 /* Fiels */,
+				9FC9BE7E24AB18A5002E5ED3 /* Extensions */,
+				9FC9BE7A24AB1851002E5ED3 /* Base */,
+			);
+			path = AppFiles;
+			sourceTree = "<group>";
+		};
+		9FC9BE7E24AB18A5002E5ED3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9FC9BE7F24AB1AB2002E5ED3 /* Fiels */ = {
+			isa = PBXGroup;
+			children = (
+				9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */,
+				9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */,
+				9FC9BE6D24AB1810002E5ED3 /* Assets.xcassets */,
+				9FC9BE7224AB1810002E5ED3 /* Info.plist */,
+				9FC9BE6F24AB1810002E5ED3 /* LaunchScreen.storyboard */,
+			);
+			name = Fiels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W64W8UKVB6;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/AppFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W64W8UKVB6;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/AppFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
