@@ -20,7 +20,7 @@ class SelectYouCityViewController: UIViewController {
     }
     @IBAction func segueToMainView(_ sender: UIButton) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "MainView") as? ViewController else{return}
-        vc.search(city: selectedCity)
+        vc.search(of: selectedCity)
         vc.modalPresentationStyle = .fullScreen
         UserDefaults.standard.set(selectedCity, forKey: "selectedCity")
         show(vc, sender: nil)
