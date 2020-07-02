@@ -12,15 +12,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var visibilityLabel: UILabel!
     @IBOutlet weak var cloudCoverLabel: UILabel!
+    @IBOutlet weak var descriptionImageView: UIImageView!
     var temp:Int?
     var city:String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        search(of: "Madrid")
+        //search(of: "moscow")
         setCurrentDate()
+        frameAndLayer()
     }
-
+    @IBAction func segueFavCitiesView(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "FavCities") as? FavCitiesTableViewController else{return}
+        vc.modalPresentationStyle = .fullScreen
+        show(vc, sender: nil)
+    }
+    
     func search(of city: String){
         guard let urlString = URL(string: url+(city.replacingOccurrences(of: " ", with: "%20"))) else{return}
         let urlSession = URLSession.shared
@@ -30,7 +36,10 @@ class ViewController: UIViewController {
             guard let data = data else{return}
             if error != nil{
                 guard let error = error else{return}
-                print(error.localizedDescription)
+                let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .actionSheet)
+                let okeyAction = UIAlertAction(title: "Okey", style: .default, handler: nil)
+                alertController.addAction(okeyAction)
+                self.present(alertController, animated: true, completion: nil)
             }
             guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] else{return}
             if  let location = json["location"] as? [String: AnyObject]{
@@ -44,6 +53,7 @@ class ViewController: UIViewController {
                 self.temp = current["temperature"] as? Int
                 guard let feelsLike = current["feelslike"] as? Int else{return}
                 guard let description = current["weather_descriptions"] as? [String] else{return}
+                guard let weatherIcon = current["weather_icons"] as? [String] else{return}
                 guard let cloudCover = current["cloudcover"] as? Int else{return}
                 guard let humidity = current["humidity"] as? Int else{return}
                 guard let windSpeed = current["wind_speed"] as? Int else{return}
@@ -51,6 +61,11 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     if let temp = self.temp{
                         self.temperatureLabel.text = "\(temp)°"
+                    }
+                    guard let url = weatherIcon.first else{return}
+                    if let imageUrl = URL(string: url){
+                        guard let data = try? Data(contentsOf: imageUrl) else{return}
+                        self.descriptionImageView.image = UIImage(data: data)
                     }
                     self.feelLikesLabel.text = "Feels like: \(feelsLike) °C"
                     self.cloudCoverLabel.text = "Cloud cover: \(cloudCover)"
@@ -60,6 +75,7 @@ class ViewController: UIViewController {
                     self.visibilityLabel.text = "Visibility: \(visibility)"
                 }
             }
+          
         }.resume()
     }
     func setCurrentDate(){
@@ -67,5 +83,8 @@ class ViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d"
         currentDateLabel.text = dateFormatter.string(from: date)
+    }
+    func frameAndLayer(){
+        descriptionImageView.layer.cornerRadius = descriptionImageView.frame.height/2
     }
 }

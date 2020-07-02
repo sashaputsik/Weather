@@ -11,6 +11,8 @@
 		9F68C0EC24AB276F001688EA /* SelectYouCityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68C0EB24AB276F001688EA /* SelectYouCityTableView.swift */; };
 		9F68C0EE24AB27A0001688EA /* SelectYouCitySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68C0ED24AB27A0001688EA /* SelectYouCitySearchBar.swift */; };
 		9F68C0F524AB2C21001688EA /* next (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9F68C0F424AB2C21001688EA /* next (2).png */; };
+		9F86644524ADC7C600E10CC5 /* FavCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */; };
+		9F86644724ADE71400E10CC5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F86644624ADE71400E10CC5 /* menu.png */; };
 		9FC9BE6524AB180C002E5ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */; };
 		9FC9BE6724AB180C002E5ED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */; };
 		9FC9BE6924AB180C002E5ED3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6824AB180C002E5ED3 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 		9F68C0EB24AB276F001688EA /* SelectYouCityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYouCityTableView.swift; sourceTree = "<group>"; };
 		9F68C0ED24AB27A0001688EA /* SelectYouCitySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYouCitySearchBar.swift; sourceTree = "<group>"; };
 		9F68C0F424AB2C21001688EA /* next (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next (2).png"; sourceTree = "<group>"; };
+		9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCitiesTableViewController.swift; sourceTree = "<group>"; };
+		9F86644624ADE71400E10CC5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		9FC9BE6124AB180C002E5ED3 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,8 +80,17 @@
 			isa = PBXGroup;
 			children = (
 				9F68C0F424AB2C21001688EA /* next (2).png */,
+				9F86644624ADE71400E10CC5 /* menu.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		9F86644324ADC78900E10CC5 /* FavCitiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */,
+			);
+			path = FavCitiesViewController;
 			sourceTree = "<group>";
 		};
 		9FC9BE5824AB180C002E5ED3 = {
@@ -117,6 +130,7 @@
 		9FC9BE7924AB184D002E5ED3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9F86644324ADC78900E10CC5 /* FavCitiesViewController */,
 				9F68C0E624AB26B8001688EA /* SelectYouCity */,
 				9F68C0E724AB26CC001688EA /* MainViewController */,
 			);
@@ -221,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC9BE7124AB1810002E5ED3 /* LaunchScreen.storyboard in Resources */,
+				9F86644724ADE71400E10CC5 /* menu.png in Resources */,
 				9F68C0F524AB2C21001688EA /* next (2).png in Resources */,
 				9FC9BE6E24AB1810002E5ED3 /* Assets.xcassets in Resources */,
 				9FC9BE6C24AB180C002E5ED3 /* Main.storyboard in Resources */,
@@ -236,6 +251,7 @@
 			files = (
 				9FC9BE8124AB1FD1002E5ED3 /* Cities.swift in Sources */,
 				9FC9BE6924AB180C002E5ED3 /* ViewController.swift in Sources */,
+				9F86644524ADC7C600E10CC5 /* FavCitiesTableViewController.swift in Sources */,
 				9F68C0EE24AB27A0001688EA /* SelectYouCitySearchBar.swift in Sources */,
 				9F68C0EC24AB276F001688EA /* SelectYouCityTableView.swift in Sources */,
 				9F68C0E924AB26E8001688EA /* SelectYouCityViewController.swift in Sources */,
