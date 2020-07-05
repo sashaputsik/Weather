@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //search(of: "moscow")
-        setCurrentDate()
+       // setCurrentDate()
         frameAndLayer()
     }
     @IBAction func segueFavCitiesView(_ sender: UIButton) {
@@ -71,10 +71,11 @@ class ViewController: UIViewController {
                     self.cloudCoverLabel.text = "Cloud cover: \(cloudCover)"
                     self.descriptionLabel.text = description.first
                     self.humidityLabel.text = "Humidity: \(humidity) °C"
-                    self.windLabel.text = " Wind speed: \(windSpeed)" + " Km/H"
+                    self.windLabel.text = "Wind speed: \(windSpeed)" + " Km/H"
                     self.visibilityLabel.text = "Visibility: \(visibility)"
                 }
             }
+            self.setCurrentDate()
           
         }.resume()
     }
@@ -82,7 +83,9 @@ class ViewController: UIViewController {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d"
-        currentDateLabel.text = dateFormatter.string(from: date)
+        DispatchQueue.main.async {
+            self.currentDateLabel.text = dateFormatter.string(from: date)
+        }
     }
     func frameAndLayer(){
         descriptionImageView.layer.cornerRadius = descriptionImageView.frame.height/2
