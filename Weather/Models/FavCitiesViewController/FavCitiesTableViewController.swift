@@ -9,14 +9,19 @@ class FavCitiesTableViewController: UITableViewController {
         refresher.addTarget(self, action: #selector(valueUpdate), for: .valueChanged)
         tableView.addSubview(refresher)
         }
-    @objc private func valueUpdate(){
-        tableView.reloadData()
-        refresher.endRefreshing()
-        }
     override func viewWillAppear(_ animated: Bool) {
         guard let userDefaultFavCities = UserDefaults.standard.value(forKey: "favCities") as? [String] else{return}
         favCities = userDefaultFavCities
         tableView.reloadData()
+    }
+    @objc private func valueUpdate(){
+        tableView.reloadData()
+        refresher.endRefreshing()
+    }
+    @IBAction func addedFavCities(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "SelectYouCity") as? SelectYouCityViewController else{return}
+        vc.modalPresentationStyle = .fullScreen
+        show(vc, sender: nil)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +47,6 @@ class FavCitiesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "MainView") as? ViewController else{return}
         vc.search(of: favCities[indexPath.row])
-        print(favCities[indexPath.row])
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: nil)
     }

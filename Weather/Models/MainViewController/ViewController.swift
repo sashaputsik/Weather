@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     var city:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        //search(of: "moscow")
-       // setCurrentDate()
+        guard let array = UserDefaults.standard.value(forKey: "favCities") as? [String] else{return}
+        guard let city = array.first else{return}
         frameAndLayer()
     }
     @IBAction func segueFavCitiesView(_ sender: UIButton) {
@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     func search(of city: String){
         guard let urlString = URL(string: url+(city.replacingOccurrences(of: " ", with: "%20"))) else{return}
         let urlSession = URLSession.shared
-        print(urlString)
         urlSession.dataTask(with: urlString) { [weak self] (data, response, error) in
             guard let self = self else{return}
             guard let data = data else{return}
@@ -47,7 +46,6 @@ class ViewController: UIViewController {
                     self.cityLabel.text = location["name"] as? String
                     self.countryLabel.text = location["country"] as? String
                 }
-                print(location["name"]!)
             }
             if let current = json["current"] as? [String: AnyObject]{
                 self.temp = current["temperature"] as? Int
