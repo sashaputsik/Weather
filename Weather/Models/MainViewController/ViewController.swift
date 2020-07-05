@@ -67,12 +67,12 @@ class ViewController: UIViewController {
                         guard let data = try? Data(contentsOf: imageUrl) else{return}
                         self.descriptionImageView.image = UIImage(data: data)
                     }
-                    self.feelLikesLabel.text = "Feels like: \(feelsLike) °C"
-                    self.cloudCoverLabel.text = "Cloud cover: \(cloudCover)"
-                    self.descriptionLabel.text = description.first
-                    self.humidityLabel.text = "Humidity: \(humidity) °C"
-                    self.windLabel.text = "Wind speed: \(windSpeed)" + " Km/H"
-                    self.visibilityLabel.text = "Visibility: \(visibility)"
+                    self.feelLikesLabel.text = "FEELS LIKE      \(feelsLike) °C"
+                    self.cloudCoverLabel.text = "CLOUD COVER      \(cloudCover)"
+                    self.descriptionLabel.text = description.first?.uppercased()
+                    self.humidityLabel.text = "HUMIDITY      \(humidity) °C"
+                    self.windLabel.text = "WIND      \(windSpeed)" + " Km/H"
+                    self.visibilityLabel.text = "VISIBILITY      \(visibility)"
                 }
             }
             self.setCurrentDate()
