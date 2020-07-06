@@ -3,9 +3,11 @@ import UIKit
 class FavCitiesTableViewController: UITableViewController {
     let url = "http://api.weatherstack.com/current?access_key=31053ca50753efd7c09bf127addb619b&query="
     var favCities = [String]()
+    @IBOutlet weak var footer: UIView!
     let refresher = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
+        footerFrameAndLayer()
         refresher.addTarget(self, action: #selector(valueUpdate), for: .valueChanged)
         tableView.addSubview(refresher)
         }
@@ -59,5 +61,14 @@ class FavCitiesTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
 
+
+}
+
+extension FavCitiesTableViewController{
+    func footerFrameAndLayer(){
+        footer.layer.borderWidth = 1
+        footer.layer.borderColor = #colorLiteral(red: 0.8933945298, green: 0.87501646, blue: 0.6959577942, alpha: 1)
+    }
 }

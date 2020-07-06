@@ -17,8 +17,6 @@ class ViewController: UIViewController {
     var city:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let array = UserDefaults.standard.value(forKey: "favCities") as? [String] else{return}
-        guard let city = array.first else{return}
         frameAndLayer()
     }
     @IBAction func segueFavCitiesView(_ sender: UIButton) {
@@ -65,18 +63,21 @@ class ViewController: UIViewController {
                         guard let data = try? Data(contentsOf: imageUrl) else{return}
                         self.descriptionImageView.image = UIImage(data: data)
                     }
-                    self.feelLikesLabel.text = "FEELS LIKE      \(feelsLike) °C"
-                    self.cloudCoverLabel.text = "CLOUD COVER      \(cloudCover)"
+                    self.feelLikesLabel.text = "\(feelsLike) °C"
+                    self.cloudCoverLabel.text = "\(cloudCover)"
                     self.descriptionLabel.text = description.first?.uppercased()
-                    self.humidityLabel.text = "HUMIDITY      \(humidity) °C"
-                    self.windLabel.text = "WIND      \(windSpeed)" + " Km/H"
-                    self.visibilityLabel.text = "VISIBILITY      \(visibility)"
+                    self.humidityLabel.text = "\(humidity) °C"
+                    self.windLabel.text = "\(windSpeed)" + " Km/H"
+                    self.visibilityLabel.text = "\(visibility)"
                 }
             }
             self.setCurrentDate()
           
         }.resume()
     }
+    
+}
+extension ViewController{
     func setCurrentDate(){
         let date = Date()
         let dateFormatter = DateFormatter()
