@@ -1,7 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let url = "http://api.weatherstack.com/current?access_key=31053ca50753efd7c09bf127addb619b&query="
+    let url = "http://api.weatherstack.com/current?access_key=80277e0892055782837a53be6b52070d&query="
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
