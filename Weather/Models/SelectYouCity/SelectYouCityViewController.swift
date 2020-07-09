@@ -9,6 +9,7 @@ class SelectYouCityViewController: UIViewController {
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        citySearchBar.searchTextField.textColor = .white
         citySearchBar.showsCancelButton = true
         searchTableView.dataSource = self
         searchTableView.delegate = self

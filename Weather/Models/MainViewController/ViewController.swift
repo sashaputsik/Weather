@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         frameAndLayer()
+        search(of: "Brest")
     }
     @IBAction func segueFavCitiesView(_ sender: UIButton) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "FavCities") as? FavCitiesTableViewController else{return}
@@ -88,5 +89,11 @@ extension ViewController{
     }
     func frameAndLayer(){
         descriptionImageView.layer.cornerRadius = descriptionImageView.frame.height/2
+        temperatureLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
+        temperatureLabel.layer.shadowOpacity = 0.3
+        cityLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cityLabel.layer.shadowOpacity = 0.2
+        descriptionLabel.layer.shadowOpacity = 0.3
+        descriptionLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
 }

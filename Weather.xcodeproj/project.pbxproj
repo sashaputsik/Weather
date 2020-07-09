@@ -14,6 +14,7 @@
 		9F68C0F524AB2C21001688EA /* next (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9F68C0F424AB2C21001688EA /* next (2).png */; };
 		9F86644524ADC7C600E10CC5 /* FavCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */; };
 		9F86644724ADE71400E10CC5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F86644624ADE71400E10CC5 /* menu.png */; };
+		9F94998424B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F94998324B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png */; };
 		9FC3124824B655910067EB25 /* FavCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3124724B655910067EB25 /* FavCitiesTableViewCell.swift */; };
 		9FC9BE6524AB180C002E5ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */; };
 		9FC9BE6724AB180C002E5ED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		9F68C0F424AB2C21001688EA /* next (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next (2).png"; sourceTree = "<group>"; };
 		9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCitiesTableViewController.swift; sourceTree = "<group>"; };
 		9F86644624ADE71400E10CC5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		9F94998324B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinpng.com-hamburger-menu-icon-png-1639439.png"; sourceTree = "<group>"; };
 		9FC3124724B655910067EB25 /* FavCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		9FC9BE6124AB180C002E5ED3 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		9F68C0EF24AB2BC3001688EA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9F94998324B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png */,
 				9F68C0F424AB2C21001688EA /* next (2).png */,
 				9F4221D724B21CBB0096D311 /* search.png */,
 				9F86644624ADE71400E10CC5 /* menu.png */,
@@ -246,6 +249,7 @@
 				9F68C0F524AB2C21001688EA /* next (2).png in Resources */,
 				9FC9BE6E24AB1810002E5ED3 /* Assets.xcassets in Resources */,
 				9FC9BE6C24AB180C002E5ED3 /* Main.storyboard in Resources */,
+				9F94998424B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

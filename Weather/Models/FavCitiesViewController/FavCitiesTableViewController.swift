@@ -1,7 +1,7 @@
 import UIKit
 
 class FavCitiesTableViewController: UITableViewController {
-    let url = "http://api.weatherstack.com/current?access_key=80277e0892055782837a53be6b52070d&query="
+    let url = "//http://api.weatherstack.com/current?access_key=80277e0892055782837a53be6b52070d&query="
     var favCities = [String]()
     @IBOutlet weak var footer: UIView!
     let refresher = UIRefreshControl()
@@ -14,7 +14,6 @@ class FavCitiesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         guard let userDefaultFavCities = UserDefaults.standard.value(forKey: "favCities") as? [String] else{return}
         favCities = userDefaultFavCities
-        tableView.reloadData()
     }
     @objc private func valueUpdate(){
         tableView.reloadData()
