@@ -30,32 +30,38 @@ class FavCitiesTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FavCitiesTableViewCell{
+            //MARK: CHANGE
             cell.nameOfCityLabel.text = favCities[indexPath.row]
-            guard let urlString = URL(string: url+(favCities[indexPath.row].replacingOccurrences(of: " ", with: "%20"))) else{return UITableViewCell()}
-            let session = URLSession.shared
-            session.dataTask(with: urlString) { (data, response, error) in
-                guard let data = data else{return}
-                guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else{return}
-                
-                if let current = json["current"]{
-                    guard let discriptionImageUrl = current["weather_icons"] as? [String] else{return}
-                    guard let url = URL(string: discriptionImageUrl.first!) else{return}
-                    guard let imageData = try? Data(contentsOf: url) else{return}
-                    guard let temp = current["temperature"] as? Int else{return}
-                    DispatchQueue.main.async {
-                        cell.descriptionImageView.image = UIImage(data: imageData)
-                        cell.temperatureLabel.text = "\(temp)"
-                        tableView.reloadData()
-                    }
+            Parse().setFavCitiesTemperature(of: favCities[indexPath.row]) { (temperature) in
+                DispatchQueue.main.async {
+                    cell.temperatureLabel.text = "\(temperature)"
+                    tableView.reloadData()
                 }
-            }.resume()
+            }
             return cell
         }
         return UITableViewCell()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "MainView") as? ViewController else{return}
-        vc.search(of: favCities[indexPath.row])
+        Parse().setWeather(of: favCities[indexPath.row]) { (cityWeather) in
+            print(cityWeather)
+            DispatchQueue.main.async {
+                vc.cityLabel.text = cityWeather.cityName
+                vc.countryLabel.text = cityWeather.country
+                vc.temp = cityWeather.temperature
+                if let temp = vc.temp{
+                    vc.temperatureLabel.text = "\(temp)°"
+                }
+                vc.feelLikesLabel.text = "\(cityWeather.feelsLike) °C"
+                vc.cloudCoverLabel.text = "\(cityWeather.cloudCover)"
+                vc.descriptionLabel.text = cityWeather.description.first?.uppercased()
+                vc.humidityLabel.text = "\(cityWeather.humidity) °C"
+                vc.windLabel.text = "\(cityWeather.windSpeed)" + " Km/H"
+                vc.visibilityLabel.text = "\(cityWeather.visibility)"
+                vc.setCurrentDate()
+            }
+        }
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: nil)
     }
@@ -72,10 +78,9 @@ class FavCitiesTableViewController: UITableViewController {
         return 95.0
     }
     
-
-
 }
 
+//MARK: FavCitiesTableViewController
 extension FavCitiesTableViewController{
     func footerFrameAndLayer(){
         footer.layer.borderWidth = 1

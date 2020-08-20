@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F4221D824B21CBB0096D311 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4221D724B21CBB0096D311 /* search.png */; };
 		9F68C0E924AB26E8001688EA /* SelectYouCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68C0E824AB26E8001688EA /* SelectYouCityViewController.swift */; };
-		9F68C0EC24AB276F001688EA /* SelectYouCityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68C0EB24AB276F001688EA /* SelectYouCityTableView.swift */; };
-		9F68C0EE24AB27A0001688EA /* SelectYouCitySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68C0ED24AB27A0001688EA /* SelectYouCitySearchBar.swift */; };
-		9F68C0F524AB2C21001688EA /* next (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9F68C0F424AB2C21001688EA /* next (2).png */; };
+		9F68C0EC24AB276F001688EA /* SelectYouCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68C0EB24AB276F001688EA /* SelectYouCity.swift */; };
 		9F86644524ADC7C600E10CC5 /* FavCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */; };
-		9F86644724ADE71400E10CC5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F86644624ADE71400E10CC5 /* menu.png */; };
-		9F94998424B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F94998324B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png */; };
+		9FC1CD6E24EDB3A3006FA9B5 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1CD6D24EDB3A3006FA9B5 /* Parse.swift */; };
+		9FC1CD7024EDB6A2006FA9B5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1CD6F24EDB6A2006FA9B5 /* Model.swift */; };
 		9FC3124824B655910067EB25 /* FavCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3124724B655910067EB25 /* FavCitiesTableViewCell.swift */; };
 		9FC9BE6524AB180C002E5ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */; };
 		9FC9BE6724AB180C002E5ED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */; };
@@ -26,14 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F4221D724B21CBB0096D311 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		9F68C0E824AB26E8001688EA /* SelectYouCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYouCityViewController.swift; sourceTree = "<group>"; };
-		9F68C0EB24AB276F001688EA /* SelectYouCityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYouCityTableView.swift; sourceTree = "<group>"; };
-		9F68C0ED24AB27A0001688EA /* SelectYouCitySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYouCitySearchBar.swift; sourceTree = "<group>"; };
-		9F68C0F424AB2C21001688EA /* next (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next (2).png"; sourceTree = "<group>"; };
+		9F68C0EB24AB276F001688EA /* SelectYouCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYouCity.swift; sourceTree = "<group>"; };
 		9F86644424ADC7C600E10CC5 /* FavCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCitiesTableViewController.swift; sourceTree = "<group>"; };
-		9F86644624ADE71400E10CC5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
-		9F94998324B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinpng.com-hamburger-menu-icon-png-1639439.png"; sourceTree = "<group>"; };
+		9FC1CD6D24EDB3A3006FA9B5 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		9FC1CD6F24EDB6A2006FA9B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9FC3124724B655910067EB25 /* FavCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		9FC9BE6124AB180C002E5ED3 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,26 +67,6 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
-		9F68C0EA24AB2741001688EA /* SelectYouCity */ = {
-			isa = PBXGroup;
-			children = (
-				9F68C0EB24AB276F001688EA /* SelectYouCityTableView.swift */,
-				9F68C0ED24AB27A0001688EA /* SelectYouCitySearchBar.swift */,
-			);
-			path = SelectYouCity;
-			sourceTree = "<group>";
-		};
-		9F68C0EF24AB2BC3001688EA /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				9F94998324B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png */,
-				9F68C0F424AB2C21001688EA /* next (2).png */,
-				9F4221D724B21CBB0096D311 /* search.png */,
-				9F86644624ADE71400E10CC5 /* menu.png */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		9F86644324ADC78900E10CC5 /* FavCitiesViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				9FC9BE7D24AB1886002E5ED3 /* AppFiles */,
-				9FC9BE7924AB184D002E5ED3 /* Models */,
+				9FC9BE7A24AB1851002E5ED3 /* Base */,
+				9FC9BE7E24AB18A5002E5ED3 /* Extensions */,
+				9FC9BE7924AB184D002E5ED3 /* Modules */,
 				9FC9BE7824AB184B002E5ED3 /* Storyboards */,
 			);
 			path = Weather;
@@ -135,20 +111,23 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		9FC9BE7924AB184D002E5ED3 /* Models */ = {
+		9FC9BE7924AB184D002E5ED3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				9F86644324ADC78900E10CC5 /* FavCitiesViewController */,
 				9F68C0E624AB26B8001688EA /* SelectYouCity */,
 				9F68C0E724AB26CC001688EA /* MainViewController */,
 			);
-			path = Models;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		9FC9BE7A24AB1851002E5ED3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9FC9BE8024AB1FD1002E5ED3 /* Cities.swift */,
 				9FC3124724B655910067EB25 /* FavCitiesTableViewCell.swift */,
+				9FC1CD6D24EDB3A3006FA9B5 /* Parse.swift */,
+				9FC1CD6F24EDB6A2006FA9B5 /* Model.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -156,11 +135,11 @@
 		9FC9BE7D24AB1886002E5ED3 /* AppFiles */ = {
 			isa = PBXGroup;
 			children = (
-				9FC9BE8024AB1FD1002E5ED3 /* Cities.swift */,
-				9F68C0EF24AB2BC3001688EA /* Resource */,
-				9FC9BE7F24AB1AB2002E5ED3 /* Files */,
-				9FC9BE7E24AB18A5002E5ED3 /* Extensions */,
-				9FC9BE7A24AB1851002E5ED3 /* Base */,
+				9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */,
+				9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */,
+				9FC9BE7224AB1810002E5ED3 /* Info.plist */,
+				9FC9BE6D24AB1810002E5ED3 /* Assets.xcassets */,
+				9FC9BE6F24AB1810002E5ED3 /* LaunchScreen.storyboard */,
 			);
 			path = AppFiles;
 			sourceTree = "<group>";
@@ -168,21 +147,9 @@
 		9FC9BE7E24AB18A5002E5ED3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9F68C0EA24AB2741001688EA /* SelectYouCity */,
+				9F68C0EB24AB276F001688EA /* SelectYouCity.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		9FC9BE7F24AB1AB2002E5ED3 /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				9FC9BE6424AB180C002E5ED3 /* AppDelegate.swift */,
-				9FC9BE6624AB180C002E5ED3 /* SceneDelegate.swift */,
-				9FC9BE6D24AB1810002E5ED3 /* Assets.xcassets */,
-				9FC9BE7224AB1810002E5ED3 /* Info.plist */,
-				9FC9BE6F24AB1810002E5ED3 /* LaunchScreen.storyboard */,
-			);
-			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,12 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC9BE7124AB1810002E5ED3 /* LaunchScreen.storyboard in Resources */,
-				9F4221D824B21CBB0096D311 /* search.png in Resources */,
-				9F86644724ADE71400E10CC5 /* menu.png in Resources */,
-				9F68C0F524AB2C21001688EA /* next (2).png in Resources */,
 				9FC9BE6E24AB1810002E5ED3 /* Assets.xcassets in Resources */,
 				9FC9BE6C24AB180C002E5ED3 /* Main.storyboard in Resources */,
-				9F94998424B7596F00B2A889 /* pinpng.com-hamburger-menu-icon-png-1639439.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,10 +227,11 @@
 				9FC9BE8124AB1FD1002E5ED3 /* Cities.swift in Sources */,
 				9FC9BE6924AB180C002E5ED3 /* ViewController.swift in Sources */,
 				9F86644524ADC7C600E10CC5 /* FavCitiesTableViewController.swift in Sources */,
-				9F68C0EE24AB27A0001688EA /* SelectYouCitySearchBar.swift in Sources */,
-				9F68C0EC24AB276F001688EA /* SelectYouCityTableView.swift in Sources */,
+				9F68C0EC24AB276F001688EA /* SelectYouCity.swift in Sources */,
+				9FC1CD7024EDB6A2006FA9B5 /* Model.swift in Sources */,
 				9F68C0E924AB26E8001688EA /* SelectYouCityViewController.swift in Sources */,
 				9FC9BE6524AB180C002E5ED3 /* AppDelegate.swift in Sources */,
+				9FC1CD6E24EDB3A3006FA9B5 /* Parse.swift in Sources */,
 				9FC9BE6724AB180C002E5ED3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
