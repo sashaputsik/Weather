@@ -20,9 +20,7 @@ class ViewController: UIViewController {
         print(citiesWeather)
         Parse().setWeather(of: "Brest" ) { (cityWeather) in
             print(cityWeather)
-            citiesWeather.append(cityWeather)
             DispatchQueue.main.async {
-            //    guard let city = citiesWeather.first else{return}
                 self.cityLabel.text = cityWeather.cityName
                 self.countryLabel.text = cityWeather.country
                 self.temperatureLabel.text = "\(cityWeather.temperature) °C"

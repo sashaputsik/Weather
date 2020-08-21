@@ -4,24 +4,14 @@ import UIKit
 //MARK: UITableViewDelegateDataSource
 extension SelectYouCityViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
-            return searchingCities.count
-        }
-        else{
-            return Cities().city_names.count
-        }
+        return isSearching ? searchingCities.count : Cities().city_names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id, for: indexPath)
         cell.textLabel?.textColor = .white
         cell.textLabel?.font = .systemFont(ofSize: 15)
-        if isSearching{
-            cell.textLabel?.text = searchingCities[indexPath.row]
-        }
-        else{
-            cell.textLabel?.text = Cities().city_names[indexPath.row]
-        }
+        cell.textLabel?.text = isSearching ? searchingCities[indexPath.row] : Cities().city_names[indexPath.row]
         return cell
     }
     
@@ -45,7 +35,6 @@ extension SelectYouCityViewController: UITableViewDelegate{
                     if let temp = vc.temp{
                         vc.temperatureLabel.text = "\(temp)°"
                     }
-                    citiesWeather.append(cityWeather)
                     vc.feelLikesLabel.text = "\(cityWeather.feelsLike) °C"
                     vc.cloudCoverLabel.text = "\(cityWeather.cloudCover)"
                     vc.descriptionLabel.text = cityWeather.description.first?.uppercased()
@@ -68,7 +57,6 @@ extension SelectYouCityViewController: UITableViewDelegate{
             guard var array = UserDefaults.standard.value(forKey: "favCities") as? [String] else{return}
             array.append(selectedCity)
             Parse().setWeather(of: selectedCity) { (cityWeather) in
-                citiesWeather.append(cityWeather)
                 DispatchQueue.main.async {
                     vc.cityLabel.text = cityWeather.cityName
                     vc.countryLabel.text = cityWeather.country
@@ -110,5 +98,11 @@ extension SelectYouCityViewController: UISearchBarDelegate{
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension UITableViewCell{
+    static var id: String{
+        return "cell"
     }
 }

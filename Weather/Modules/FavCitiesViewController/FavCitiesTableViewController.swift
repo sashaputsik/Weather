@@ -29,7 +29,7 @@ class FavCitiesTableViewController: UITableViewController {
         return favCities.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FavCitiesTableViewCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id, for: indexPath) as? FavCitiesTableViewCell{
             //MARK: CHANGE
             cell.nameOfCityLabel.text = favCities[indexPath.row]
             Parse().setFavCitiesTemperature(of: favCities[indexPath.row]) { (temperature) in
