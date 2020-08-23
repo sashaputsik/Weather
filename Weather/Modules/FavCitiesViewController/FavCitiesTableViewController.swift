@@ -1,14 +1,13 @@
 import UIKit
 
 class FavCitiesTableViewController: UITableViewController {
-    let url = "//http://api.weatherstack.com/current?access_key=80277e0892055782837a53be6b52070d&query="
-    var favCities = [String]()
-    @IBOutlet weak var footer: UIView!
-    let refresher = UIRefreshControl()
+    @IBOutlet private(set) var footer: UIView!
+    private let refresher = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
-        footerFrameAndLayer()
-        refresher.addTarget(self, action: #selector(valueUpdate), for: .valueChanged)
+        refresher.addTarget(self,
+                            action: #selector(valueUpdate),
+                            for: .valueChanged)
         tableView.addSubview(refresher)
         }
     override func viewWillAppear(_ animated: Bool) {
@@ -25,39 +24,38 @@ class FavCitiesTableViewController: UITableViewController {
         show(vc, sender: nil)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return favCities.count
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id, for: indexPath) as? FavCitiesTableViewCell{
-            //MARK: CHANGE
-            cell.nameOfCityLabel.text = favCities[indexPath.row]
-            Parse().setFavCitiesTemperature(of: favCities[indexPath.row]) { (temperature) in
-                DispatchQueue.main.async {
-                    cell.temperatureLabel.text = "\(temperature)"
-                    tableView.reloadData()
-                }
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id,
+                                                       for: indexPath) as? FavCitiesTableViewCell else{return UITableViewCell()}
+        cell.nameOfCityLabel.text = favCities[indexPath.row]
+        Parse().setFavCitiesTemperature(of: favCities[indexPath.row]) { (temperature) in
+            DispatchQueue.main.async {
+                cell.temperatureLabel.text = "\(temperature)" + Values.degrees.rawValue
+                tableView.reloadData()
             }
-            return cell
         }
-        return UITableViewCell()
+            return cell
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "MainView") as? ViewController else{return}
         Parse().setWeather(of: favCities[indexPath.row]) { (cityWeather) in
             print(cityWeather)
             DispatchQueue.main.async {
                 vc.cityLabel.text = cityWeather.cityName
                 vc.countryLabel.text = cityWeather.country
-                vc.temp = cityWeather.temperature
-                if let temp = vc.temp{
-                    vc.temperatureLabel.text = "\(temp)°"
-                }
-                vc.feelLikesLabel.text = "\(cityWeather.feelsLike) °C"
+                vc.temperatureLabel.text = "\(cityWeather.temperature)°"
+                vc.feelLikesLabel.text = "\(cityWeather.feelsLike)" + Values.degreesC.rawValue
                 vc.cloudCoverLabel.text = "\(cityWeather.cloudCover)"
                 vc.descriptionLabel.text = cityWeather.description.first?.uppercased()
-                vc.humidityLabel.text = "\(cityWeather.humidity) °C"
-                vc.windLabel.text = "\(cityWeather.windSpeed)" + " Km/H"
+                vc.humidityLabel.text = "\(cityWeather.humidity)" + Values.degreesC.rawValue
+                vc.windLabel.text = "\(cityWeather.windSpeed)" + Values.kmPerH.rawValue
                 vc.visibilityLabel.text = "\(cityWeather.visibility)"
                 vc.setCurrentDate()
             }
@@ -65,25 +63,22 @@ class FavCitiesTableViewController: UITableViewController {
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: nil)
     }
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             favCities.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .left)
-            UserDefaults.standard.set(favCities, forKey: "favCities")
+            tableView.deleteRows(at: [indexPath],
+                                 with: .left)
+            UserDefaults.standard.set(favCities,
+                                      forKey: "favCities")
             UserDefaults.standard.synchronize()
             tableView.reloadData()
         }
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95.0
     }
     
-}
-
-//MARK: FavCitiesTableViewController
-extension FavCitiesTableViewController{
-    func footerFrameAndLayer(){
-        footer.layer.borderWidth = 1
-        footer.layer.borderColor = #colorLiteral(red: 0.8933945298, green: 0.87501646, blue: 0.6959577942, alpha: 1)
-    }
 }

@@ -1,5 +1,7 @@
 import Foundation
 
+var favCities = [String]()
+
 struct Weather{
     var feelsLike: Int
     var description: [String]
@@ -36,4 +38,10 @@ enum ParseKeys: String{
     case temperature = "temperature"
     case location = "location"
     case current = "current"
+}
+
+enum Values: String{
+    case kmPerH = " Km/H"
+    case degreesC = " °C"
+    case degrees = "°"
 }

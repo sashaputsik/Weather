@@ -2,11 +2,11 @@ import UIKit
 
 class SelectYouCityViewController: UIViewController {
 
-    var isSearching = false
-    var selectedCity = ""
-    var searchingCities = [String]()
-    @IBOutlet weak var citySearchBar: UISearchBar!
-    @IBOutlet weak var searchTableView: UITableView!
+    public var isSearching = false
+    public var selectedCity = ""
+    public var searchingCities = [String]()
+    @IBOutlet private(set) var citySearchBar: UISearchBar!
+    @IBOutlet private(set) var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         citySearchBar.searchTextField.textColor = .white
@@ -19,7 +19,7 @@ class SelectYouCityViewController: UIViewController {
     }
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue){
         guard let vc = unwindSegue.destination as? FavCitiesTableViewController else{return}
-        print("d")
+        print(vc.self)
     }
 
 }
